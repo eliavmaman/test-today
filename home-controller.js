@@ -1,4 +1,5 @@
 angular.module('app').controller("homeCtrl", function ($scope, $http, $state) {
+    $scope.isList = true;
     $scope.init = function () {
         $http.get('data.json').then(function (res) {
 
@@ -21,7 +22,10 @@ angular.module('app').controller("homeCtrl", function ($scope, $http, $state) {
 
     $scope.getYear = function (year) {
         return year.substring(0, 4);
+    }
 
+    $scope.changeView = function () {
+        $scope.isList= !$scope.isList;
     }
 
 });

@@ -2,6 +2,10 @@
     .f-l {
         float: left;
     }
+
+    .d-t-c  div.f-l{
+        width: calc(100% - 105px);
+    }
 </style>
 <div class="row" ng-init="init()">
     <div class="col-sm-4">
@@ -9,13 +13,15 @@
             <button type="button" class="list-group-item"
                     ng-repeat="(key,val) in categories" ng-click="selectCat(key,val)"
                     ng-class="{active: key == selectedKey}">
-                {{key}}
+                {{key}} ({{val.length}})
             </button>
+
+            <button class="btn bt-warning" ng-click="changeView()"> Change View</button>
 
         </div>
     </div>
-    <div class="col-sm-8">
-        <div ng-repeat="d in cat_data" class="row">
+    <div class="col-sm-8" >
+        <div ng-repeat="d in cat_data" class="row"  ng-class="{'col-sm-3': isList==false}">
             <img ng-src="{{d.Poster}}" class="f-l" style="width: 100px; height: 150px;" alt="">
             <div class="f-l">
                 <strong>{{d.Title}}</strong>
