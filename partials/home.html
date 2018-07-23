@@ -16,9 +16,12 @@
                 {{key}} ({{val.length}})
             </button>
 
-            <button class="btn bt-warning" ng-click="changeView()"> Change View</button>
+
 
         </div>
+
+
+        <button class="btn bt-warning" ng-click="changeView()"> Change View</button>
     </div>
     <div class="col-sm-8" >
         <div ng-repeat="d in cat_data" class="row"  ng-class="{'col-sm-3': isList==false}">
