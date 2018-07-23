@@ -1,0 +1,29 @@
+<style>
+    .f-l {
+        float: left;
+    }
+</style>
+<div class="row" ng-init="init()">
+    <div class="col-sm-4">
+        <div class="list-group">
+            <button type="button" class="list-group-item"
+                    ng-repeat="(key,val) in categories" ng-click="selectCat(key,val)"
+                    ng-class="{active: key == selectedKey}">
+                {{key}}
+            </button>
+
+        </div>
+    </div>
+    <div class="col-sm-8">
+        <div ng-repeat="d in cat_data" class="row">
+            <img ng-src="{{d.Poster}}" class="f-l" style="width: 100px; height: 150px;" alt="">
+            <div class="f-l">
+                <strong>{{d.Title}}</strong>
+                <br>
+                <span>Year: {{getYear(d.Year)}}</span>
+            </div>
+
+
+        </div>
+    </div>
+</div>
